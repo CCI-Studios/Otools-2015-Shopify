@@ -22,9 +22,8 @@
             <div class="tr">
               <div class="th td image empty">&nbsp;</div>
               <div class="th td item empty">&nbsp;</div>
-              <div class="th td qty">{{ 'cart.label.quantity' | t }}</div>
               <div class="th td price">{{ 'cart.label.price' | t }}</div>
-              <div class="th td remove empty">&nbsp;</div>
+              <div class="th td qty">{{ 'cart.label.quantity' | t }}</div>
             </div>
           </div>
           <div class="tbody">
@@ -45,16 +44,18 @@
                   {% endif %}
                 </a>
               </div>
-              <div class="td qty">
-                <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" />
-              </div>
               <div class="td price">{{ item.line_price | money }}</div>
-              <div class="td remove"><a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart">{{ 'cart.general.remove' | t }}</a></div>
+              <div class="td qty">
+                <label>Quantity
+                    <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" />
+                </label>
+                <button type="submit" class="update" name="update">{{ 'cart.general.update' | t }}</button>
+                <span class="remove"><a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart">{{ 'cart.general.remove' | t }}</a></span>
+              </div>
             </div>
             {% endfor %}
             <div class="tr summary">
               <div class="td image empty">&nbsp;</div>
-              <div class="td empty">&nbsp;</div>
               <div class="td empty">&nbsp;</div>
               <div class="td price"><span class="total"><strong>{{ cart.total_price | money }}</strong></span></div>
               <div class="td empty">&nbsp;</div>
@@ -71,8 +72,7 @@
 
         <div class="span6 cart-buttons inner-right inner-left">
           <div class="buttons clearfix">
-            <input type="submit" id="checkout" class="btn" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
-            <input type="submit" id="update-cart" class="btn" name="update" value="{{ 'cart.general.update' | t }}" />
+            <button type="submit" class="checkout" name="checkout">{{ 'cart.general.checkout' | t }}</button>
           </div>
         </div>
         
