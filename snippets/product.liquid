@@ -1,0 +1,92 @@
+<div class="view view-rental-detail view-id-rental_detail view-display-id-block">
+    <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last mod3-0">
+            <div>
+                <div class="views-field views-field-field-photos">
+                    <div class="field-content">
+                        <div class="item-list">
+                            <ul>
+                                {% for image in product.images %}
+                                <li>
+                                    <img src="{{ image | product_img_url: 'large' }}" alt="" />
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="views-field views-field-field-photos-1">
+                    <div class="field-content">
+                        <div class="item-list">
+                            <ul>
+                                {% for image in product.images %}
+                                <li>
+                                    <img src="{{ image | product_img_url: '110x75' }}" width="110" height="75" alt="">
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="views-field views-field-title">
+                    <h1 class="field-content">{{ product.title }}</h1>
+                </div>
+                <div class="views-field views-field-field-price">
+                    <span class="views-label views-label-field-price">Price: </span>
+                    <span class="field-content">{{ product.price | money }}</span>
+                </div>
+                <div class="views-field views-field-body">
+                    <div class="field-content">
+                        {{ product.description }}
+                    </div>
+                </div>
+                <div class="views-field views-field-nothing">
+                    <div class="field-content">
+                        <form action="/cart/add" method="post" class="add-to-cart variants clearfix">
+                          
+                          <!-- Begin product options -->
+                          <div class="product-options {% if hide_default_title %}no-options {% endif %}">
+                              
+                            {% if product.variants.size > 1 %}
+                            <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+                              <select id="product-select" name="id">
+                                {% for variant in product.variants %}
+                                <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}>{{ variant.title }} - {{ variant.price | money }}</option>
+                                {% endfor %}
+                              </select>
+                            </div>
+                            {% else %}
+                            <input type="hidden" name="id" value="{{ product.variants[0].id }}" />
+                            {% endif %}
+
+                            {% if settings.display_quantity_dropdown %}
+                            <div class="selector-wrapper">
+                              <label>{{ 'products.product.quantity' | t }}</label>
+                              <input id="quantity" type="number" name="quantity" value="1" class="tc item-quantity" />
+                            </div>
+                            {% endif %}
+
+                            <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+                              <div class="purchase">
+                                {% unless product.available %}
+                                <p>{{ 'products.product.sold_out_html' | t }}</p>
+                                {% else %}
+                                <button type="submit" class="btn addtocart" name="add">Add to Shopping Cart</button>
+                                <div id="cart-animation" style="display:none">1</div>
+                                {% endunless %}
+                              </div>
+                            </div>
+                          </div>
+                          <!-- End product options -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if settings.show_related_products %}
+  {% include 'related-products' %}
+{% endif %}

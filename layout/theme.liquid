@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+{% assign site = 'http://otools.192.168.1.119.xip.io/' %}
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <title>
+    {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tagged' | t }} "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    <link rel="shortcut icon" href="{{ site }}favicon.ico" type="image/vnd.microsoft.icon">
+
+    {{content_for_header}}
+
+    {% if page_description %}
+    <meta name="description" content="{{ page_description }}" />
+    {% endif %}
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <script src="//use.typekit.net/dcn1yxi.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <style>
+    @font-face {
+        font-family: 'aaronboldregular';
+        src: url('{{ 'aaronbold-webfont.eot' | asset_url}}');
+        src: url('{{ 'aaronbold-webfont.eot' | asset_url}}?#iefix') format('embedded-opentype'),
+             url('{{ 'aaronbold-webfont.woff2' | asset_url}}') format('woff2'),
+             url('{{ 'aaronbold-webfont.woff' | asset_url}}') format('woff'),
+             url('{{ 'aaronbold-webfont.ttf' | asset_url}}') format('truetype'),
+             url('{{ 'aaronbold-webfont.svg' | asset_url}}#aaronboldregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    <link rel="stylesheet" href="{{ site }}sites/all/themes/otools/css/shopify.css" type="text/css" />
+    <script type="text/javascript" src="{{ site }}sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+    <script type="text/javascript" src="http://otools.local/sites/all/themes/otools/js/menu.js?no8vbz"></script>
+    <script type="text/javascript" src="{{ site }}sites/all/themes/otools/js/slick.min.js?no8vbz"></script>
+    <script type="text/javascript" src="{{ site }}sites/all/themes/otools/js/carousel.js?no8vbz"></script>
+    <script type="text/javascript" src="{{ site }}sites/all/themes/otools/js/product-detail-gallery.js?no8vbz"></script>
+</head>
+
+<body>
+    <div class="page-wrapper"><div><div>
+
+      <div class="navigation"><div><div>
+          <a href="{{site}}" title="Home" rel="home" class="logo">
+            <img src="{{site}}/sites/all/themes/otools/img/logo.svg" alt="Home">
+          </a>
+          <a href="#" class="btn-menu">Open menu</a>
+          <div class="region region-navigation">
+      <div id="block-system-main-menu" class="block block-system block-menu">
+
+      
+    <div class="content">
+      <ul class="menu"><li class="first expanded carts"><a href="/">Carts</a><ul class="menu"><li class="first leaf"><a href="/">About O'tools Carts</a></li>
+    <li class="leaf"><a href="/">New</a></li>
+    <li class="leaf"><a href="/">Used</a></li>
+    <li class="leaf"><a href="/">Custom</a></li>
+    <li class="last leaf"><a href="{{site}}winter-storage">Winter Storage</a></li>
+    </ul></li>
+    <li class="expanded parts"><a href="/">Parts</a><ul class="menu"><li class="first expanded"><a href="/">Accessories</a><ul class="menu"><li class="first leaf"><a href="/">Fold Down Windshields</a></li>
+    <li class="leaf"><a href="/">Elite Flip Seats</a></li>
+    <li class="leaf"><a href="/">Underseat Trays</a></li>
+    <li class="leaf"><a href="/">Body Kits</a></li>
+    <li class="leaf"><a href="/">Light Kits</a></li>
+    <li class="leaf"><a href="/">Golf Cart Covers</a></li>
+    <li class="last leaf"><a href="/">Lift Kits</a></li>
+    </ul></li>
+    <li class="expanded"><a href="/">Parts</a><ul class="menu"><li class="first leaf"><a href="/">Batteries</a></li>
+    <li class="leaf"><a href="/">Rear Seat Kits</a></li>
+    <li class="leaf"><a href="/">Cushions &amp; Covers</a></li>
+    <li class="leaf"><a href="/">Golf Cart Bodies</a></li>
+    <li class="leaf"><a href="/">Windshields</a></li>
+    <li class="leaf"><a href="/">Cargo Beds</a></li>
+    <li class="leaf"><a href="/">Top Kits</a></li>
+    <li class="last leaf"><a href="/">Tires &amp; Rims</a></li>
+    </ul></li>
+    <li class="leaf"><a href="{{site}}winter-storage">Winter Storage</a></li>
+    <li class="last leaf"><a href="/">Wagler Mini Barns</a></li>
+    </ul></li>
+    <li class="last expanded rentals"><a href="{{site}}rentals">Rentals</a><ul class="menu"><li class="first leaf"><a href="{{site}}rentals/lawn-and-garden">Lawn and Garden</a></li>
+    <li class="leaf"><a href="{{site}}rentals/construction">Construction</a></li>
+    <li class="leaf"><a href="{{site}}rentals/cleaning">Cleaning</a></li>
+    <li class="leaf"><a href="{{site}}rentals/demolition">Demolition</a></li>
+    <li class="leaf"><a href="{{site}}rentals/cart-and-leisure">Cart and Leisure</a></li>
+    <li class="last leaf"><a href="{{site}}rentals">Rental Catalogue</a></li>
+    </ul></li>
+    </ul>  </div>
+    </div>
+    <div id="block-menu-menu-top-menu" class="block block-menu">
+
+      
+    <div class="content">
+      <ul class="menu"><li class="first leaf"><a href="{{site}}">Home</a></li>
+    <li class="leaf"><a href="{{site}}about">About</a></li>
+    <li class="leaf active-trail"><a href="{{site}}events" class="active-trail active">Events</a></li>
+    <li class="leaf"><a href="{{site}}winter-storage">Services</a></li>
+    <li class="leaf"><a href="{{site}}contact">Contact</a></li>
+    <li class="leaf cart"><a href="http://otools.myshopify.com/cart">{% if cart.item_count > 0 %}<span class="count">{{ cart.item_count }}<span class="alt">items </span></span>{% endif %}<span class="alt">Shopping cart</span></a></li>
+    <li class="last leaf fb"><a href="https://www.facebook.com/pages/Otools-Golf-Carts/552048848166472" target="_blank"><span class="alt">Facebook</span></a></li>
+    </ul>  </div>
+    </div>
+    </div>
+      </div></div></div> <!-- /.navigation -->
+      
+      <div class="header"><div><div>
+            </div></div></div> <!-- /.header -->
+
+      <div class="main-wrapper"><div><div>
+
+        <div class="content"><div><div>
+            
+          {% if template == "list-collections" %}
+          <div id="collection" class="row">
+            <div class="span12">
+              <h1><span>{{ 'collections.list_collections.product_collections' | t }}</span></h1>
+            </div> <!-- /.span12 -->
+          </div> <!-- /.row -->
+
+          <div class="row products masonry">
+            {% for collection in collections %}
+            {% unless collection.all_products_count == 0 or collection.handle == "frontpage" %}
+            {% include 'collection-loop' %}
+            {% endunless %}
+            {% endfor %}
+          </div> <!-- /#collection.row -->
+          {% else %}
+          {{ content_for_layout }}
+          {% endif %}
+
+      </div></div></div> <!-- /.content -->
+
+      </div></div></div> <!-- /.main-wrapper -->
+
+      <div class="footer"><div><div>
+        <div class="region region-footer">
+      <div id="block-menu-menu-footer-menu" class="block block-menu">
+
+
+      <div class="content">
+      <ul class="menu"><li class="first leaf col1"><a href="{{site}}about">About O'tools</a></li>
+      <li class="leaf col2"><a href="/">Golf Cart Accessories</a></li>
+      <li class="leaf col3"><a href="/">Golf Cart Gallery</a></li>
+      <li class="leaf col1"><a href="/">Financing</a></li>
+      <li class="leaf col2"><a href="{{site}}rentals">Rental Catalogue</a></li>
+      <li class="leaf col3"><a href="{{site}}winter-storage">Winter Storage</a></li>
+      <li class="leaf col1"><a href="/">Product Warranty</a></li>
+      <li class="leaf col2"><a href="/">Custom Cart Quote</a></li>
+      <li class="last leaf col3"><a href="/">Wagler Mini Barns</a></li>
+      </ul>  </div>
+      </div>
+      <div id="block-block-1" class="block block-block footer-info">
+
+
+      <div class="content">
+      <p>7977 Rawlings Road, Forest ON N0N 1J0<br><a class="phone" href="tel:​5197865902">519-786-5902</a><br><a href="mailto:info@otools.ca">info@otools.ca</a> &nbsp;| &nbsp;<a href="http://www.otools.ca">www.otools.ca</a></p>
+      <p>Monday - Friday: 8am - 5pm<br>
+      Saturday: 9am - 2pm<br>
+      Closed Sunday &amp; Holiday Mondays</p>
+      <p><a href="http://www.clubcar.com/" target="_blank"><img alt="ClubCar" src="{{site}}sites/all/themes/otools/img/logo-clubcar.svg" style="height:36px; width:48px"></a>&nbsp; &nbsp; &nbsp;<a href="http://www.mymadjax.com/" target="_blank"><img alt="Madjax" src="{{site}}sites/all/themes/otools/img/logo-madjax.png" style="height:37px; width:52px"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/pages/Otools-Golf-Carts/552048848166472" target="_blank"><img alt="O'tools on Facebook" src="{{site}}sites/all/themes/otools/img/fb.svg" style="height:30px; width:30px"></a></p>
+      </div>
+      </div>
+      </div>
+      </div></div></div> <!-- /.footer -->
+
+
+      </div></div></div> <!-- /.page-wrapper -->
+
+</body>
+</html>
