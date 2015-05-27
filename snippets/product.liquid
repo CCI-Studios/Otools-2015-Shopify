@@ -21,7 +21,7 @@
                             <ul>
                                 {% for image in product.images %}
                                 <li>
-                                    <img src="{{ image | product_img_url: '110x75' }}" width="110" height="75" alt="">
+                                    <img src="{{ image | product_img_url: 'compact' }}" width="110" alt="">
                                 </li>
                                 {% endfor %}
                             </ul>
